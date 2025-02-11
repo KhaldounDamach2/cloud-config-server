@@ -1,0 +1,19 @@
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    hostname: localhost
+    prefer-ip-address: false
+    instance-id: ${spring.application.name}:${server.port}
+
+
+ microservice:
+   payment-service:
+      endpoints:
+        endpoint:
+          uri: http://PAYMENT-SERVICE/payment/doPayment
+    order-service:
+      endpoints:
+        endpoint:
+           uri: http://ORDER-SERVICE/order/bookOrder   
